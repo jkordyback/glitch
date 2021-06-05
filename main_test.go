@@ -1,10 +1,11 @@
 package main
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func Test_run(t *testing.T) {
 	exitCode := run()
-	if exitCode != exitOK {
-		t.Errorf("exitCode wrong, got: %d, want: %d.", exitCode, exitCode)
-	}
+	assert.Equal(t, exitOK, exitCode, "should be zero")
 }
